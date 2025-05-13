@@ -26,7 +26,7 @@ watchEffect((onInvalidate) => {
       user.value = { name: `Usuario ${userId.value}` }
       loading.value = false
     }
-  }, 1000)
+  }, 5000)
 
   // 🔄 Limpiar si cambia el userId antes de que termine el fetch
   onInvalidate(() => {
