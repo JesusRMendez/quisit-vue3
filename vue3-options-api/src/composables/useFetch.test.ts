@@ -24,7 +24,7 @@ describe('useFetch', () => {
 
   it('sets error on failed fetch', async () => {
     vi.mocked(global.fetch).mockImplementationOnce(() =>
-      Promise.resolve({ ok: false })
+      Promise.resolve(new Response(null, { status: 500 }))
     )
 
     const { error, refetch } = useFetch('https://error.api/data')

@@ -12,8 +12,48 @@ npm install -D vitest @vue/test-utils@2 @vitejs/plugin-vue @testing-library/vue 
 npm install -D @vitest/ui @types/jest @types/jsdom
 ```
 
-# Add vitest.config.ts to the project
+also add to vite.js config the following:
 
+```
+alias: {
+    '@': path.resolve(__dirname, './src')
+  }
+```
+
+# Add vitest.config.ts to the project
+```ts
+import { defineConfig } from 'vitest/config'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [vue()],
+  test: {
+    globals: true,
+    environment: 'jsdom'
+  },
+})
+```
+
+# Add vitest and vitest/ui to devDependencies
 ```bash
 npm install -D vitest @vitest/ui
 ```
+
+# Create the testings for useCounter
+(The component useCounter is already created in the src/components folder)
+
+
+# Create a new file testing for the useForm for later create the useForm composable
+
+# Create the new file in the src/components folder UseForm for view in UI
+
+# Create the new file for testing component UseForm.tests.ts
+
+# Create the new file for testing composable useFetch testing
+
+# Create the new file for testing composable useFetch.ts
+
+# Create the new file for testing composable useFetch.tests.ts
+
+
+
