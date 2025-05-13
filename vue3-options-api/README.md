@@ -55,5 +55,8 @@ npm install -D vitest @vitest/ui
 
 # Create the new file for testing composable useFetch.tests.ts
 
+# Watch Effect create the testing component userFech.test.ts
+
+# Create the new file component UserFetcher
 
 
