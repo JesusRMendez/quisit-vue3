@@ -60,3 +60,30 @@ npm install -D vitest @vitest/ui
 # Create the new file component UserFetcher
 
 
+## PINA
+
+# Install Pina
+```bash
+npm install pinia
+```
+# Add to tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "types": ["pinia"]
+  }
+}
+```
+
+# Add to main.ts
+```ts
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import App from './App.vue'
+```
+
+# Add store folder and store counter
+
+# Add store testimg
+
+# Add store logic in component CounterPina
