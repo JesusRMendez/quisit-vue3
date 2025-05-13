@@ -2,24 +2,39 @@
   <div>
     <p>Contador: {{ count }}</p>
     <p>Doble: {{ double }}</p>
-    <button @click="increment">Incrementar</button>
+    <button @click="incrementar">Incrementar</button>
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
-import { useCounter } from '../composables/useCounter'
-
-const props = defineProps({
-  start: {
-    type: Number,
-    default: 0
+<script>
+export default {
+  props: {
+    start: {
+      type: Number,
+      default: 0
+    }
+  },
+  data() {
+    return {
+      count: this.start
+    }
+  },
+  computed: {
+    double() {
+      return this.count * 2
+    }
+  },
+  methods: {
+    incrementar() {
+      this.count++
+    }
+  },
+  watch: {
+    count(newVal) {
+      if (newVal >= 10) {
+        this.$emit('limitReached', newVal)
+      }
+    }
   }
-})
-
-const emit = defineEmits(['limitReached'])
-
-const { count, double, increment } = useCounter(props.start, (val) => {
-  emit('limitReached', val)
-})
+}
 </script>
