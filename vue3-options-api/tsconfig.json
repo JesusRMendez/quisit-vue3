@@ -1,8 +1,5 @@
 {
   "files": [],
-  "compilerOptions": {
-    "types": ["pinia"]
-  },
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
