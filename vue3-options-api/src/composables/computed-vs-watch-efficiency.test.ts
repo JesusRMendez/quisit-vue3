@@ -40,6 +40,3 @@ describe('Comparación de eficiencia: computed vs watch', () => {
     expect(computedSpy).toHaveBeenCalledTimes(1)
   })
 })
-
-Mostrar cómo watchEffect se ejecuta inmediatamente y reacciona automáticamente a todo lo que se use dentro.
-	•	Usar onInvalidate() para cancelar o limpiar un efecto antes de que se vuelva a ejecutar.
