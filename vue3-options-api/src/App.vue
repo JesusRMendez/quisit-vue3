@@ -1,24 +1,15 @@
 <template>
   <div>
-    <h1>Composition API with Typescript</h1>
-    <!-- <Counter :start="5" @limitReached="handleLimit" />
-    <CounterTS :start="5" @limitReached="handleLimit" /> -->
-    <!-- <UserForm /> -->
-    <!-- <h2>Post List Fetch</h2> -->
-    <!-- <PostList />-->
-     <UserFetcher />
-    
+    <h1>Phase 1 - Options API</h1>
+    <Counter :start="5" @limitReached="handleLimit" />
   </div>
 </template>
 
 <script>
-import Counter from './components/Counter.vue';
-import CounterTS from './components/CounterTS.vue';
-import PostList from './components/PostList.vue';
-import UserFetcher from './components/UserFetcher.vue';
-import UserForm from './components/UserForm.vue';
+import Counter from './components/Counter.vue'
+
 export default {
-  components: {  CounterTS, Counter, UserForm, PostList, UserFetcher },
+  components: { Counter },
   methods: {
     handleLimit(value) {
       alert(`¡Límite alcanzado con valor: ${value}!`)
@@ -26,5 +17,3 @@ export default {
   }
 }
 </script>
-
-<!-- <CounterTS :start="5" @limitReached="handleLimit" />  -->
