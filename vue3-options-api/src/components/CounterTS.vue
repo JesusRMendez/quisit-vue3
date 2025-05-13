@@ -6,18 +6,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import { useCounter } from '../composables/useCounter'
 
-const props = defineProps({
-  start: {
-    type: Number,
-    default: 0
-  }
-})
+const props = defineProps<{
+  start: number
+}>()
 
-const emit = defineEmits(['limitReached'])
+const emit = defineEmits<{
+  (event: 'limitReached', value: number): void
+}>()
 
 const { count, double, increment } = useCounter(props.start, (val) => {
   emit('limitReached', val)
